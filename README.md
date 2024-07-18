@@ -1,7 +1,6 @@
 # random48
-================
 
-A Python program to change the MAC address on Linux systems
+A Python program to change the MAC address on Linux systems.
 
 ### Purpose
 
