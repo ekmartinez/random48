@@ -1,6 +1,6 @@
 # random48
 
-A Python program to change the MAC address on Linux systems.
+A Python program to change the MAC address in Linux systems.
 
 ### Purpose
 
@@ -43,6 +43,7 @@ python random48.py -rand <interface>  # Generates ands sets random MAC address
 
 ### Notes
 
+* Python 3.10 or above is a requirement.
 * When using the `-rand` option, you may encounter occasional errors. In this case, simply run the program again until it generates a valid MAC address.
 * Make sure to replace `<interface>` with your actual network interface name (e.g., wlan0).
 
