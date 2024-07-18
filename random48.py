@@ -4,8 +4,7 @@ import sys
 import string
 import random
 
-def help():
-    usage = """Usage options:
+usage = """\nUsage options:
     --h | -help : Display usage options.
     --s | -set :  Sets MAC address to provided value.
     --r | -rand:  Sets random MAC address.
@@ -22,7 +21,6 @@ def help():
     Set MAC address to random value:
         python random48.py -rand <interface>
     """
-    return usage
 
 def random_hex():
     """Random MAC Address Generator"""
@@ -44,7 +42,7 @@ def regx_mac(mac_addr):
     if re.match(mac_regex, mac_addr):
         return True
     else:
-        print(help())
+        print(usage)
         print("\nInvalid mac Address format")
         return False
 
@@ -60,14 +58,14 @@ if __name__ == '__main__':
         option = sys.argv[1]
         match option:
             case '--h' | '-help':
-                print(help())
+                print(usage)
             case '--s' | '-set':
                 set_mac(sys.argv[2], sys.argv[3])
             case '--r' | '-rand':
                 random_mac = random_hex()
                 set_mac(sys.argv[2], random_mac)
             case _:
-                print(help())
+                print(usage)
     except IndexError:
-        print(help())
+        print(usage)
 
