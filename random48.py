@@ -43,15 +43,17 @@ def regx_mac(mac_addr):
         return True
     else:
         print(usage)
-        print("\nInvalid mac Address format")
+        print("\nInvalid mac Address format.")
         return False
 
 def set_mac(iface, mac_addr):
     """Sets MAC address"""
     if regx_mac(mac_addr):
-        print(mac_addr)
         cmd = f'sudo ip link set {iface} address {mac_addr}'
         os.system(cmd)
+        print(mac_addr)
+
+        return True
 
 if __name__ == '__main__':
     try:
