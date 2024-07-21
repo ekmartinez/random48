@@ -71,3 +71,6 @@ if __name__ == '__main__':
     except IndexError:
         print(usage)
 
+"""
+sudo ip link set dev eth0 address $(printf '02:%02X:%02X:%02X:%02X:%02X\n' $((RANDOM%256)) $((RANDOM%256)) $((RANDOM%256)) $((RANDOM%256)) $((RANDOM%256)))
+"""
